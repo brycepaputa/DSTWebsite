@@ -175,7 +175,6 @@ body, html {
 	text-align: center;
 }
 
-
 header {
 	-webkit-transition: all 0.4s 0.1s;
 	-webkit-transition-delay: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -188,9 +187,10 @@ header {
 	z-index: 3;
 	background: #fff;
 	width: 100%;
-	height: 15%;
+	height: 10%;
 	padding: 25px 0;
 	border-bottom: 1px solid black;
+	overflow: hidden;
 }
 
 .welcome .message {
