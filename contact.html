@@ -1,6 +1,5 @@
 <html>
 	<head>
-        <link rel="stylesheet prefetch" href="normalize.css">
         <link rel="stylesheet prefetch" href="main.css">	
         <link rel="stylesheet prefetch" href="contact.css">	
         
@@ -50,13 +49,18 @@
 	</head>
 	<body>
 		<header> 
-			<a id="nav-toggle" href="#menu">MENU <span></span></a>
-			<script>
-				document.querySelector("#nav-toggle").addEventListener( "click", function() {
-					this.classList.toggle( "active" );
-					this.href = this.href == "#menu"? "#" : "#menu";
-				});	
-			</script>
+			<div>
+				<div id="box">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<script>
+					document.querySelector("#box ul").addEventListener("click", function(){ document.querySelector("#box ul").classList.toggle("open"); document.querySelector("#menu").classList.toggle("open"); }, false);
+				</script>
+			</div>
 		</header>
 		<div id="mapdiv">
 			<a href="#mapdiv">
@@ -77,19 +81,16 @@
 						<h2>
 							Have any questions?
 						</h2>
-						<br/>
-						<br/>
 						Send us a message, we'll get back to you as soon as possible.
-						<br/>
 					</th>
 				</tr>
 				<tr>
 					<td>
-						<input placeholder="Full Name" required="" title="Full name required" type="text" value="">
+						<input placeholder="First Name" required="" title="Full name required" type="text" value="">
 					</td>
 					
 					<td>
-						<input placeholder="Website" type="text" value="">
+						<input placeholder="Last Name" required="" title="Full name required" type="text" value="">
 					</td>
 				</tr>
 				<tr>
@@ -123,7 +124,6 @@
 			</br><a href="courseschedule.html">Course schedule</a>
 			</br><a href="empcorp.html">Employment</a>
 			</br><a href="index.html">Main Page</a>
-			</br><a href="#">Close</a>
 		</div>
 	</body>
 </html>

@@ -1,11 +1,23 @@
  <html>
 	<head>
-        <link rel="stylesheet prefetch" href="normalize.css">
         <link rel="stylesheet prefetch" href="main.css">	
         <link rel="stylesheet prefetch" href="empcorp.css">	
 	</head>
 	<body>
-		<header> <h4>top text</h4> <a href="#menu">menu</a> </header>
+		<header> 
+			<div>
+				<div id="box">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<script>
+					document.querySelector("#box ul").addEventListener("click", function(){ document.querySelector("#box ul").classList.toggle("open"); document.querySelector("#menu").classList.toggle("open"); }, false);
+				</script>
+			</div>
+		</header>
 		<div id="scheduleinfo">
 			Employment and corporate training here, once you give me it i'll put some actual structure here.
 		</div>
@@ -13,7 +25,6 @@
 			</br><a href="contact.html">Contact</a>
 			</br><a href="courseschedule.html">Course schedule</a>
 			</br><a href="index.html">Main Page</a>
-			</br><a href="#">Close</a>
 		</div>
 	</body>
 </html>

@@ -42,6 +42,7 @@ iframe, #map, #bgimage{
 #mapdiv:target #bgimage{
 	opacity: 0;
 	transition: all 1s;
+	z-index: -10;
 }
 
 td{
@@ -54,6 +55,31 @@ td{
 	left: 10%;
 	width: 80%;
 	right: 10%;
+}
+
+#contactmap{
+	position: fixed;
+	right: -100%;
+	width: 100%;
+	top: 15%;
+	height: 85%;
+	z-index: 4;
+	-webkit-transition: all 350ms;
+	transition: all 350ms;
+}
+
+#contactmap:target{
+	right: 0;
+	-webkit-transition: all 350ms;
+	z-index: 10;
+}
+
+#contactmap iframe{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%!important;
+	width: 100%!important;
 }
 
 td input{
