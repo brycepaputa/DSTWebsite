@@ -1,0 +1,21 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id="canvas" height="500px" width="500px"></canvas>
+		<script>
+			var canvas = document.getElementById("canvas");
+			var ctx = canvas.getContext("2d");
+
+			ctx.font="200px SansSerif";
+			ctx.fillText("Hello World!", 0, 100);
+			ctx.rect(0, 0, 25, 25);
+			ctx.stroke();
+			var data = ctx.getImageData(0, 0, 25, 25);
+			for(var i = 0; i < data.data.length; i+=4){
+				data.data[i] = 0;
+			}
+			ctx.putImageData(data, 0, 0);
+		</script>
+	</body>
+</html>

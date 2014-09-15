@@ -3,32 +3,127 @@
         <link rel="stylesheet prefetch" href="normalize.css">
         <link rel="stylesheet prefetch" href="main.css">	
         <link rel="stylesheet prefetch" href="contact.css">	
+        
+        <style type="text/css">
+            /* Set a size for our map container, the Google Map will take up 100% of this container */
+            #map {
+                width: 750px;
+                height: 500px;
+            }
+        </style>
+        
+        <!-- 
+            You need to include this script on any page that has a Google Map.
+            When using Google Maps on your own site you MUST signup for your own API key at:
+                https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+            After your sign up replace the key in the URL below or paste in the new script tag that Google provides.
+        -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+        
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 15,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(42.497369, -83.374117,17), // New York
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [{'featureType':'water','stylers':[{'color':'#021019'}]},{'featureType':'landscape','stylers':[{'color':'#08304b'}]},{'featureType':'poi','elementType':'geometry','stylers':[{'color':'#0c4152'},{'lightness':5}]},{'featureType':'road.highway','elementType':'geometry.fill','stylers':[{'color':'#000000'}]},{'featureType':'road.highway','elementType':'geometry.stroke','stylers':[{'color':'#0b434f'},{'lightness':25}]},{'featureType':'road.arterial','elementType':'geometry.fill','stylers':[{'color':'#000000'}]},{'featureType':'road.arterial','elementType':'geometry.stroke','stylers':[{'color':'#0b3d51'},{'lightness':16}]},{'featureType':'road.local','elementType':'geometry','stylers':[{'color':'#000000'}]},{'elementType':'labels.text.fill','stylers':[{'color':'#ffffff'}]},{'elementType':'labels.text.stroke','stylers':[{'color':'#000000'},{'lightness':13}]},{'featureType':'transit','stylers':[{'color':'#146474'}]},{'featureType':'administrative','elementType':'geometry.fill','stylers':[{'color':'#000000'}]},{'featureType':'administrative','elementType':'geometry.stroke','stylers':[{'color':'#144b53'},{'lightness':14},{'weight':1.4}]}]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using out element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+            }
+        </script>
+
+        </script>
 	</head>
 	<body>
-		<header> <h4>top text</h4> <a href="#menu">menu</a> </header>
+		<header> 
+			<a id="nav-toggle" href="#menu">MENU <span></span></a>
+			<script>
+				document.querySelector("#nav-toggle").addEventListener( "click", function() {
+					this.classList.toggle( "active" );
+					this.href = this.href == "#menu"? "#" : "#menu";
+				});	
+			</script>
+		</header>
 		<div id="mapdiv">
 			<a href="#mapdiv">
 				<div id="bgimage"> 
 					<div id="mapinfo">
-						address here, click for map
+						Address: 32969 Hamilton Court
+						Suite 210
+						Farmington Hils, MI
 					</div>
 				</div>
 			</a>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26860.1485080908!2d-117.17022906221646!3d32.69884556746125!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d9535eda33b3cf%3A0x730a9eb038914a3c!2s770+11th+Ave%2C+San+Diego%2C+CA+92101!5e0!3m2!1sen!2sus!4v1406764395339" width="800" height="600" frameborder="0" style="border:0"></iframe>
+			<div id="map"></div>
 		</div>
 		<div id="contactinfo">
-			phone: 555-5555
-			
-			email: email@example.com
-			
-			lorem ipsum dolor sit amet
+			<table>
+				<tr>
+					<th colspan="2">
+						<h2>
+							Have any questions?
+						</h2>
+						<br/>
+						<br/>
+						Send us a message, we'll get back to you as soon as possible.
+						<br/>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<input placeholder="Full Name" required="" title="Full name required" type="text" value="">
+					</td>
+					
+					<td>
+						<input placeholder="Website" type="text" value="">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input placeholder="Work Email" required="" title="Valid email address required" type="text" value="">
+					</td>
+					
+					<td>
+						<input placeholder="Phone" type="text" value="">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<textarea placeholder="Type your message here."></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="button" value="Submit"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" id="othercontact">
+						Don't want to fill out a form? <br/>
+						Drop us a line at 248-778-6714.
+					</td>
+				</tr>
+			</table>
 		</div>
-		<div id="menu" class="black">
-			menu stuff
-			</br><a href="#">close</a>
-			<!--</br><a href="contact.html">contact</a>-->
-			</br><a href="courseschedule.html">course schedule</a>
-			</br><a href="index.html">main page</a>
+		<div id="menu">
+			</br><a href="courseschedule.html">Course schedule</a>
+			</br><a href="empcorp.html">Employment</a>
+			</br><a href="index.html">Main Page</a>
+			</br><a href="#">Close</a>
 		</div>
 	</body>
 </html>

@@ -1,12 +1,12 @@
 #mapdiv{
 	position: absolute;
 	left: 0;
-	top: 10%;
-	height: 90%;
+	top: 0%;
+	height: 100%;
 	width: 40%;
 }
 
-iframe, #bgimage{
+iframe, #map, #bgimage{
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -25,7 +25,8 @@ iframe, #bgimage{
 
 #bgimage{
 	z-index: 10;
-	background-color: red;
+	background-image: url('Detroit-City-Skyline.jpg');
+	background-position: center center;
 	transition: all 1000000s;
 }
 
@@ -41,4 +42,53 @@ iframe, #bgimage{
 #mapdiv:target #bgimage{
 	opacity: 0;
 	transition: all 1s;
+}
+
+td{
+	padding: 10px;
+}
+
+#contactinfo table{
+	position: relative;
+	top: 20%;
+	left: 10%;
+	width: 80%;
+	right: 10%;
+}
+
+td input{
+	height: 40px;
+}
+
+td textarea{
+	height: 80px;
+	resize: none;
+}
+
+td input, td textarea{
+	display: block;
+	width: 100%;
+	background-color: whitesmoke;
+	border: none;
+}
+
+td input[type="button"]{
+	position: relative;
+	left: 35%;
+	width: 30%;
+	background-color: #06ba8f;
+	border: none;
+	color: white;
+	border-radius: 100px;
+}
+
+h2 {
+	font-size: 50px;
+}
+
+#othercontact{
+	font-size: 15px;
+	position: relative;
+	width: 100%;
+	text-align: center;
 }
