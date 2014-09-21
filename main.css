@@ -3,7 +3,7 @@
 }
 
 .accent{
-	background-color: rgb(6, 186, 143);
+	background-color: #428bca;/*rgb(6, 186, 143);*/
 	color: white;
 }
 
@@ -216,7 +216,7 @@ header > div{
 	z-index: 5;
 	-webkit-transition: all 350ms;
 	transition: all 350ms;
-	background-color: rgba(6, 186, 143, 0.75);
+	background-color: rgba(66, 139, 202, .75);/*rgba(6, 186, 143, 0.75);*/
 	color: white;
 	padding-top: 5%;
 	padding-left: 10px;
@@ -289,31 +289,47 @@ header > div{
 	opacity:1;
 }
 
-.bar{
-	position: absolute;
-	left: 0%;
+.barbg{
+	position: relative;
+	left: 0;
 	width: 100%;
-	height: 50%;
+	background-color: rgb(51, 51, 51);
+	color: white;
 }
 
-.bar div{
+.bar{
+	display: table;
+	position: relative;
+	left: 35%;
+	width: 30%;
+	height: 8%;
+}
+
+.bar div{	
+	display: table-cell;
 	text-align: center;
-	position: absolute;
+	vertical-align: middle;
+	height: 100%;
+	padding: 20px;
+}
+
+.bar  div:hover{
+	background-color: #428bca;
 }
 
 .bar #course1button{
 	left: 35%;
-	width: 10%;
+	width: 5%;
 }
 
 .bar #course2button{
 	left: 45%;
-	width: 10%;
+	width: 5%;
 }
 
 .bar #course3button{
 	left: 55%;
-	width: 10%;
+	width: 5%;
 }
 
 .course{
@@ -337,4 +353,15 @@ header > div{
 
 #coursemain{
 	display: block;
+}
+
+.grad{
+	background-image: -o-linear-gradient(bottom, #D2E0E8 0, #FFFFFF 100px);
+	background-image: -moz-linear-gradient(bottom, #D2E0E8 0, #FFFFFF 100px);
+	background-image: -webkit-linear-gradient(bottom, #D2E0E8 0, #FFFFFF 100px);
+	background-image: -ms-linear-gradient(bottom, #D2E0E8 0, #FFFFFF 100px);
+	background-image: linear-gradient(to bottom, #D2E0E8 0, #FFFFFF 100px);
+	border-top: 1px solid #accade;
+	padding: 30px 0;
+	overflow: hidden;
 }
