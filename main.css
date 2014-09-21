@@ -1,4 +1,4 @@
-#core .container.overlap {
+.container.overlap {
 	z-index: 2;
 }
 
@@ -13,7 +13,7 @@
 	box-sizing: border-box;
 }
 
-#core .container.overlap.top:after {
+.container.overlap.top:after {
 	-webkit-transform-origin: 0 0;
 	-moz-transform-origin: 0 0;
 	-ms-transform-origin: 0 0;
@@ -35,7 +35,7 @@
 	background: inherit;
 }
 
-#core .container.overlap.both:before {
+.container.overlap.both:before {
 	-webkit-transform-origin: 0 0;
 	-moz-transform-origin: 0 0;
 	-ms-transform-origin: 0 0;
@@ -57,7 +57,7 @@
 	background: inherit;
 }
 
-#core .container.overlap.both:after {
+.container.overlap.both:after {
 	-webkit-transform-origin: 0 0;
 	-moz-transform-origin: 0 0;
 	-ms-transform-origin: 0 0;
@@ -98,15 +98,13 @@ body, html {
 }
 
 #core {
-	position: relative;
+	position: absolute;
 	left: 0;
-    bottom:0;
-    overflow-x:hidden;
+	top: 0;
 	width: 100%;
 	-webkit-transition: all 350ms;
-	width: 100%;
+	height: 100%;
 	overflow-x:hidden;
-	pointer-events: none;
 }
 
 #core .welcome {
@@ -120,16 +118,16 @@ body, html {
 	left: 0%;
 }
 
-#core .container.white {
+.white {
 	background: #fff;
 }
 
-#core .container {
+.container {
 	position: relative;
 	width: 100%;
 }
 
-#core .container.overlapped {
+.container.overlapped {
 	padding: 200px 0;
 }
 
@@ -249,12 +247,12 @@ header > div{
 	-webkit-transition: all 500ms ease;
 	transition: all 500ms ease;
 }
-ul{
+#box ul{
 	padding:15px;
 	-webkit-transition: all 500ms ease;
 	transition: all 500ms ease;
 }
-li{
+#box li{
 	list-style:none;
 	width:100%;
 	height:6px;
@@ -264,29 +262,79 @@ li{
 	-webkit-transition: all 500ms ease;
 	transition: all 500ms ease;
 }
-li:first-child{
+#box li:first-child{
 	-webkit-transform:rotate(0deg);
 	transform:rotate(0deg);
 	top:0px;
 }
-li:last-child{
+#box li:last-child{
 	-webkit-transform:rotate(0deg);
 	transform:rotate(0deg);
 	top:0px;
 }
-.open li{
+#box .open li{
 	opacity:0;  
 	background:#fff;
 }
-.open li:first-child{
+#box .open li:first-child{
 	-webkit-transform:rotate(45deg);
 	transform:rotate(45deg);
 	top:12px;
 	opacity:1;
 }
-.open li:last-child{
+#box .open li:last-child{
 	-webkit-transform:rotate(-45deg);
 	transform:rotate(-45deg);
 	top:-12px;
 	opacity:1;
+}
+
+.bar{
+	position: absolute;
+	left: 0%;
+	width: 100%;
+	height: 50%;
+}
+
+.bar div{
+	text-align: center;
+	position: absolute;
+}
+
+.bar #course1button{
+	left: 35%;
+	width: 10%;
+}
+
+.bar #course2button{
+	left: 45%;
+	width: 10%;
+}
+
+.bar #course3button{
+	left: 55%;
+	width: 10%;
+}
+
+.course{
+	display: none;
+	width: 100%;
+}
+
+.course  table{
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+.course table ul{
+	text-align: left;
+}
+
+.course td{
+	padding-top: 20px;
+}
+
+#coursemain{
+	display: block;
 }
