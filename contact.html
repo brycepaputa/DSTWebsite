@@ -36,12 +36,19 @@
                     styles: [{'featureType':'water','stylers':[{'color':'#021019'}]},{'featureType':'landscape','stylers':[{'color':'#08304b'}]},{'featureType':'poi','elementType':'geometry','stylers':[{'color':'#0c4152'},{'lightness':5}]},{'featureType':'road.highway','elementType':'geometry.fill','stylers':[{'color':'#000000'}]},{'featureType':'road.highway','elementType':'geometry.stroke','stylers':[{'color':'#0b434f'},{'lightness':25}]},{'featureType':'road.arterial','elementType':'geometry.fill','stylers':[{'color':'#000000'}]},{'featureType':'road.arterial','elementType':'geometry.stroke','stylers':[{'color':'#0b3d51'},{'lightness':16}]},{'featureType':'road.local','elementType':'geometry','stylers':[{'color':'#000000'}]},{'elementType':'labels.text.fill','stylers':[{'color':'#ffffff'}]},{'elementType':'labels.text.stroke','stylers':[{'color':'#000000'},{'lightness':13}]},{'featureType':'transit','stylers':[{'color':'#146474'}]},{'featureType':'administrative','elementType':'geometry.fill','stylers':[{'color':'#000000'}]},{'featureType':'administrative','elementType':'geometry.stroke','stylers':[{'color':'#144b53'},{'lightness':14},{'weight':1.4}]}]
                 };
 
+				
                 // Get the HTML DOM element that will contain your map 
                 // We are using a div with id="map" seen below in the <body>
                 var mapElement = document.getElementById('map');
 
                 // Create the Google Map using out element and options defined above
                 var map = new google.maps.Map(mapElement, mapOptions);
+				
+				var marker = new google.maps.Marker({
+					position: new google.maps.LatLng(42.497369, -83.374117,17),
+					map: map,
+					title: '32969 Hamilton Court Suite 210 Farmington Hils, MI'
+				});
             }
         </script>
 
@@ -58,6 +65,7 @@
 					</ul>
 				</div>
 				<script>
+					window.setTimeout(function(){window.location = document.querySelector("#mapdiv a").href;}, 3000);
 					document.querySelector("#box ul").addEventListener("click", function(){ document.querySelector("#box ul").classList.toggle("open"); document.querySelector("#menu").classList.toggle("open"); }, false);
 				</script>
 			</div>
@@ -65,11 +73,6 @@
 		<div id="mapdiv">
 			<a href="#mapdiv">
 				<div id="bgimage"> 
-					<div id="mapinfo">
-						Address: 32969 Hamilton Court
-						Suite 210
-						Farmington Hils, MI
-					</div>
 				</div>
 			</a>
 			<div id="map"></div>
@@ -81,7 +84,7 @@
 						<h2>
 							Have any questions?
 						</h2>
-						Send us a message, we'll get back to you as soon as possible.
+						<span> Send us a message, we'll get back to you as soon as possible. <span>
 					</th>
 				</tr>
 				<tr>
@@ -115,7 +118,7 @@
 				<tr>
 					<td colspan="2" id="othercontact">
 						Don't want to fill out a form? <br/>
-						Drop us a line at 248-778-6714.
+						Drop us a call at 248-778-6714.
 					</td>
 				</tr>
 			</table>

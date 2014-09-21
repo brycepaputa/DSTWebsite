@@ -1,21 +1,107 @@
-<html>
-	<head>
-	</head>
-	<body>
-		<canvas id="canvas" height="500px" width="500px"></canvas>
-		<script>
-			var canvas = document.getElementById("canvas");
-			var ctx = canvas.getContext("2d");
 
-			ctx.font="200px SansSerif";
-			ctx.fillText("Hello World!", 0, 100);
-			ctx.rect(0, 0, 25, 25);
-			ctx.stroke();
-			var data = ctx.getImageData(0, 0, 25, 25);
-			for(var i = 0; i < data.data.length; i+=4){
-				data.data[i] = 0;
-			}
-			ctx.putImageData(data, 0, 0);
-		</script>
-	</body>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Click letters - jsFiddle demo by AbdiasSoftware</title>
+  
+  <script type='text/javascript' src='/js/lib/dummy.js'></script>
+  
+  
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+  <style type='text/css'>
+    body {background:#000;}
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+window.onload=function(){
+var ctx = demo.getContext('2d'),
+    w = demo.width,
+    h = demo.height,
+    ltrs = [{
+		char: "Data Science Technologies",
+		x: 0,
+		y: 20,
+		size: 120,
+		font: "arial"
+	}],
+
+render(ltrs, '#fff');
+
+demo.onclick = function(e) {
+    
+    var rect = demo.getBoundingClientRect(),
+        x = e.clientX - rect.left,
+        y = e.clientY - rect.top,
+        i = 0, o;
+    
+    for(;o = ltrs[i]; i++) {
+        if (x > o.x && x < (o.x + o.rect[2]) &&
+            y > o.y && y < (o.y + o.rect[3])) {
+
+            if (checkPixel(o, x, y) === true) {
+                setLetterObject(ctx, o, '#f00')
+                setLetterObject(ctx, o, '#f00')
+                setLetterObject(ctx, o, '#f00')
+                return;
+            }
+        }
+    }
+}
+function render(arr, color) {
+    for(var i = 0, o; o = arr[i]; i++) {
+        setLetterObject(ctx, o, color);
+        
+        /// calc boundary (note: height not accurate here)
+        o.rect = [o.x, o.y, ctx.measureText(o.char).width, o.size];
+    }
+}
+function setLetterObject(cx, o, color) {
+    cx.textBaseline = 'top';
+    cx.font = o.size + 'px ' + o.font;
+    cx.fillStyle = color;
+    cx.fillText(o.char, o.x, o.y);
+}
+function checkPixel(o, x, y) {
+    
+    var oc = document.createElement('canvas'),
+        octx = oc.getContext('2d'),
+        data,
+        oldX = o.x,
+        oldY = o.y;
+   
+    /// default canvas is 300x150, adjust if letter size is larger
+    oc.width = oc.height = 1000;
+    
+    /// this can be refactored to something better but for demo...
+    o.x = 0;
+    o.y = 0;
+
+    setLetterObject(octx, o, '#000');
+    
+    o.x = oldX;
+    o.y = oldY;
+
+    data = octx.getImageData(x - oldX, y - oldY, 1, 1).data;
+    return (data[3] !== 0);
+}
+
+}//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <canvas id="demo" width=500 height=500></canvas>
+  
+</body>
+
+
 </html>
+
