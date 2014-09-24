@@ -84,6 +84,16 @@ a{
 }
 
 
+body .slides{
+	display: none;
+}
+
+.draw {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
 body, html {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
@@ -92,6 +102,7 @@ body, html {
 	-webkit-text-size-adjust: none;
 	overflow-x: hidden;
 	margin: 0;
+	height: 100%;
 }
 
 #anchor{
@@ -136,7 +147,21 @@ body, html {
 	color: #fff;
 }
 
-.welcome h1 {
+#wnsd1, #wnsd2 {
+	position: absolute;
+	width: 100%;
+	left: 0;
+}
+
+#wnsd1 {
+	top: 33%;
+}
+
+#wnsd2 {
+	top: 50%;
+}
+
+.welcome #wnsh1 {
 	font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
 	font-weight: 700;
 	font-size: 6rem;
@@ -145,14 +170,19 @@ body, html {
 	text-transform: uppercase;
 	margin: 0;
 	text-align: center;
-	position: relative;
-	top:-5%;
+}
+
+#wnsh2 {
+	font-size: 2rem;
+	text-align: center;
 }
 
 h2 {
 	font-size: 4rem;
 	text-align: center;
 }
+
+
 
 header {
 	-webkit-transition: all 0.4s 0.1s;
@@ -205,6 +235,13 @@ header > div{
 	text-align: center;
 	max-width: 100%;
 	margin: 0 auto;
+	background: rgba(255,255,255,0);
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 75%, rgba(255,255,255,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(75%, rgba(255,255,255,0)), color-stop(100%, rgba(255,255,255,1)));
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 75%, rgba(255,255,255,1) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 75%, rgba(255,255,255,1) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 75%, rgba(255,255,255,1) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 75%, rgba(255,255,255,1) 100%);
 }
 
 #menu {
@@ -237,12 +274,27 @@ header > div{
 	-webkit-transition: opacity 100ms ease;
 	transition: opacity 100ms ease;
 }
+
+#box:before{
+	content: "Menu";
+	font-size: 30px;
+	position: absolute;
+	right: 70px;
+	top: 25px;
+	color: black;
+	-webkit-transition: all 500ms ease;
+}
+
+#box.open:before{
+	color: rgba(66, 139, 202, 0);
+}
+
 #box{
 	position: absolute;
 	
 	width:60px;
 	height:60px;
-	right: 0%;
+	right: 20px;
 	top:0%;
 	-webkit-transition: all 500ms ease;
 	transition: all 500ms ease;
@@ -272,17 +324,17 @@ header > div{
 	transform:rotate(0deg);
 	top:0px;
 }
-#box .open li{
+#box.open li{
 	opacity:0;  
 	background:#fff;
 }
-#box .open li:first-child{
+#box.open li:first-child{
 	-webkit-transform:rotate(45deg);
 	transform:rotate(45deg);
 	top:12px;
 	opacity:1;
 }
-#box .open li:last-child{
+#box.open li:last-child{
 	-webkit-transform:rotate(-45deg);
 	transform:rotate(-45deg);
 	top:-12px;
