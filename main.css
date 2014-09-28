@@ -3,7 +3,7 @@
 }
 
 .accent{
-	background-color: #428bca;/*rgb(6, 186, 143);*/
+	background-color: rgb(83, 220, 185);/*#428bca;/*rgb(6, 186, 143);*/
 	color: white;
 }
 
@@ -182,8 +182,6 @@ h2 {
 	text-align: center;
 }
 
-
-
 header {
 	-webkit-transition: all 0.4s 0.1s;
 	-webkit-transition-delay: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -203,6 +201,26 @@ header {
 header > div{
 	text-align: right;
 	width: 100%;
+}
+
+header form div{
+	text-align: center;
+	position: absolute;
+	left: 30%;
+	right: 30%;
+	top: 666%;
+	z-index: -10;
+}
+
+#logo{
+	background: url('logo.png');
+	height: 90px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: left;
+	position: absolute;
+	left: 10px;
+	top: 10px;
 }
 
 .welcome {
@@ -253,10 +271,12 @@ header > div{
 	z-index: 5;
 	-webkit-transition: all 350ms;
 	transition: all 350ms;
-	background-color: rgba(66, 139, 202, .75);/*rgba(6, 186, 143, 0.75);*/
+	background-color: rgba(83, 220, 185, .75);/*rgba(6, 186, 143, 0.75);*/
 	color: white;
 	padding-top: 5%;
 	padding-left: 10px;
+	padding-right: 10px;
+	text-align: right;
 }
 
 #menu a{
@@ -286,7 +306,7 @@ header > div{
 }
 
 #box.open:before{
-	color: rgba(66, 139, 202, 0);
+	color: rgba(83, 220, 185, 0);
 }
 
 #box{
@@ -408,12 +428,12 @@ header > div{
 }
 
 .grad{
-	background-image: -o-linear-gradient(bottom, #D2E0E8 0, #FFFFFF 100px);
-	background-image: -moz-linear-gradient(bottom, #D2E0E8 0, #FFFFFF 100px);
-	background-image: -webkit-linear-gradient(bottom, #D2E0E8 0, #FFFFFF 100px);
-	background-image: -ms-linear-gradient(bottom, #D2E0E8 0, #FFFFFF 100px);
-	background-image: linear-gradient(to bottom, #D2E0E8 0, #FFFFFF 100px);
-	border-top: 1px solid #accade;
+	background-image: -o-linear-gradient(bottom, rgb(169, 238, 225) 0, #FFFFFF 100px);
+	background-image: -moz-linear-gradient(bottom, rgb(169, 238, 225) 0, #FFFFFF 100px);
+	background-image: -webkit-linear-gradient(bottom, rgb(169, 238, 225) 0, #FFFFFF 100px);
+	background-image: -ms-linear-gradient(bottom, rgb(169, 238, 225) 0, #FFFFFF 100px);
+	background-image: linear-gradient(to bottom, rgb(169, 238, 225) 0, #FFFFFF 100px);
+	border-top: 1px solid rgb(169, 238, 225);
 	padding: 30px 0;
 	overflow: hidden;
 }

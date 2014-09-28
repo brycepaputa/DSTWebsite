@@ -223,7 +223,7 @@ var init = function(){
 	
 	var ps = new ParticleSlider({
 		ptlGap: isSmall ? 3 : 1,
-		ptlSize: isSmall ? 3 : 2,
+		ptlSize: isSmall ? 3 : 1.25,
 		width: 1e9,
 		height: 1e9, 
 		monochrome: true,
