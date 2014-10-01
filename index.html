@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+	<!-- TODO: empcorp.html form+-->
 	<head>
         <link rel="stylesheet prefetch" href="main.css">
 	</head>
@@ -11,7 +12,7 @@
 			</div>
 		</div>
 		<script src="jsgtext.js"></script>
-		<header> 
+		<header class="mainhead"> 
 			<div id="logo">
 			</div>
 			<div>
@@ -26,10 +27,12 @@
 					document.querySelector("#box").addEventListener("click", function(){ document.querySelector("#box ").classList.toggle("open"); document.querySelector("#menu").classList.toggle("open"); }, false);
 				</script>
 			</div>
+		</header>
+		<header class="emailhead">
 			<form>
 				<div>
 					<input id="email" name="email" type="text" placeholder="Enter Email Address"/>
-					<input id="submit" name="submit" type="button" value="Contact Us"/>
+					<input id="submit" class="bigbutton" name="submit" type="button" value="Contact Us"/>
 				</div>
 			</form>
 		</header>
@@ -45,34 +48,38 @@
 			<div class="barbg">
 				<div class="bar">
 					<div id="course1button">
-						course 1
+						SAP pp
 					</div>
 					<div id="course2button">
-						course 2
+						SAP mm/wm
 					</div>
 					<div id="course3button">
-						course 3
+						SAP sd
+					</div>
+					<div id="course4button">
+						SAP bw
+					</div>
+					<div id="course5button">
+						SAP EWM
+					</div>
+					<div id="course6button">
+						SAP Fico
+					</div>
+					<div id="course7button">
+						Java/Testing
 					</div>
 				</div>
 			</div>
 			<div class="course" id="coursemain">
 				<div class="container grad">
-					<h2> Over a decade of experience </h2>
+					<h2> Faculty Experience </h2>
 					<p>
 						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
 					</p>
 				</div>
-				<div class="container grad">
-					<table>
-						<tr>
-							<td> Excellent communication and teaching ability. </td>
-							<td> An excellent track record of proven results. </td>
-							<td> Evidence based tutoring guided by quantifiable results. </td>
-						</tr>
-					</table>
-				</div>
-				<div class="container grad">
-					<h2> Over 1000 people taught. </h2>
+				<div class="container antigrad">
+					<h2> Corporate Training </h2>
+					<button class="bigbutton" onclick="document.querySelector('#contactpop').style.display = 'block'; window.setTimeout(function(){document.querySelector('#contactpop').style.opacity = '1';}, 10);"> Contact us</button>
 				</div>
 			</div>
 			<div class="course" id="course1">
@@ -170,19 +177,111 @@
 			<div class="course" id="course3">
 				course 3
 			</div>
+			<div class="course" id="course4">
+				course 4
+			</div>
+			<div class="course" id="course5">
+				course 3
+			</div>
+			<div class="course" id="course6">
+				course 3
+			</div>
+			<div class="course" id="course7">
+				course 3
+			</div>
+			<footer>
+				<div>
+					<a href="index.html">Main Page</a> 
+					<a href="contact.html">Contact Us</a>
+					<a href="empcorp.html">Employment</a>
+					<a>Facebook</a>
+					<br/>
+					<span>
+						Copyright 2014 Bryce Paputa, Emporia International and Data Science Technologies.
+					</span>
+				</div>
+			</footer>
 		</div>
 		<script>
+			var lastID = "";
 			var changediv = function(id){
 				document.querySelector("#coursemain").style.display = "none";
 				document.querySelector("#course1").style.display = "none";
 				document.querySelector("#course2").style.display = "none";
 				document.querySelector("#course3").style.display = "none";
+				document.querySelector("#course4").style.display = "none";
+				document.querySelector("#course5").style.display = "none";
+				document.querySelector("#course6").style.display = "none";
+				document.querySelector("#course7").style.display = "none";
+				document.querySelector("#course1button").innerHTML = "SAP pp";
+				document.querySelector("#course2button").innerHTML = "SAP mm/wm";
+				document.querySelector("#course3button").innerHTML = "SAP sd";
+				document.querySelector("#course4button").innerHTML = "SAP bw";
+				document.querySelector("#course5button").innerHTML = "SAP EWM";
+				document.querySelector("#course6button").innerHTML = "SAP Fico";
+				document.querySelector("#course7button").innerHTML = "Java/Testing";
+				if(lastID == id){
+					id="#coursemain";
+				} else {
+					document.querySelector(id + "button").innerHTML = "Back";
+				}
 				document.querySelector(id).style.display = "block";
+				lastID = id;
 			}
 			document.querySelector("#course1button").addEventListener("click", function(){changediv("#course1");}, false);
 			document.querySelector("#course2button").addEventListener("click", function(){changediv("#course2");}, false);
 			document.querySelector("#course3button").addEventListener("click", function(){changediv("#course3");}, false);
+			document.querySelector("#course4button").addEventListener("click", function(){changediv("#course4");}, false);
+			document.querySelector("#course5button").addEventListener("click", function(){changediv("#course5");}, false);
+			document.querySelector("#course6button").addEventListener("click", function(){changediv("#course6");}, false);
+			document.querySelector("#course7button").addEventListener("click", function(){changediv("#course7");}, false);
 		</script>
+		<div id="contactpop">
+			<table>
+				<tr>
+					<th colspan="2">
+						<h2>
+							Have any questions?
+						</h2>
+						<span> Send us a message, we'll get back to you as soon as possible. <span>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<input placeholder="First Name" required="" title="Full name required" type="text" value="">
+					</td>
+					
+					<td>
+						<input placeholder="Last Name" required="" title="Full name required" type="text" value="">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input placeholder="Work Email" required="" title="Valid email address required" type="text" value="">
+					</td>
+					
+					<td>
+						<input placeholder="Phone" type="text" value="">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<textarea placeholder="Type your message here."></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="button" value="Submit" onclick="document.querySelector('#contactpop').style.opacity = '0'; window.setTimeout(function(){document.querySelector('#contactpop').style.display = 'none';}, 350);"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" id="othercontact">
+						Don't want to fill out a form? <br/>
+						Drop us a call at 248-778-6714.
+					</td>
+				</tr>
+			</table>
+		</div>
 		<div id="menu">
 			</br><a href="contact.html">Contact</a>
 			</br><a href="empcorp.html">Careers</a>

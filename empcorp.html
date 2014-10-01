@@ -6,7 +6,7 @@
 	<body>
 		<header> 
 			<div>
-				<div id="box">
+				<div id="box" class="white">
 					<ul>
 						<li></li>
 						<li></li>
@@ -18,8 +18,69 @@
 				</script>
 			</div>
 		</header>
-		<div id="scheduleinfo">
-			Employment and corporate training here, once you give me it i'll put some actual structure here.
+		<div id="join">
+			<h2>Want To Teach A Class?</h2>
+			<h1>Join Our Team</h1>
+			<button class="bigbutton" onclick="document.querySelector('#contactpop').style.display = 'block'; window.setTimeout(function(){document.querySelector('#contactpop').style.opacity = '1';}, 10);">Send Resume</button>
+			<footer>
+				<div>
+					<a href="index.html">Main Page</a> 
+					<a href="contact.html">Contact Us</a>
+					<a href="empcorp.html">Employment</a>
+					<a>Facebook</a>
+					<br/>
+					<span>
+						Copyright 2014 Bryce Paputa, Emporia International and Data Science Technologies.
+					</span>
+				</div>
+			</footer>
+		</div>
+		
+		<div id="contactpop">
+			<table>
+				<tr>
+					<th colspan="2">
+						<h2>
+							Have any questions?
+						</h2>
+						<span> Send us a message, we'll get back to you as soon as possible. <span>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<input placeholder="First Name" required="" title="Full name required" type="text" value="">
+					</td>
+					
+					<td>
+						<input placeholder="Last Name" required="" title="Full name required" type="text" value="">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input placeholder="Work Email" required="" title="Valid email address required" type="text" value="">
+					</td>
+					
+					<td>
+						<input placeholder="Phone" type="text" value="">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<span>Upload your resume: </span><input type="file" name="file" id="file"><br>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="button" value="Submit" onclick="document.querySelector('#contactpop').style.opacity = '0'; window.setTimeout(function(){document.querySelector('#contactpop').style.display = 'none';}, 350);"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" id="othercontact">
+						Don't want to fill out a form? <br/>
+						Drop us a call at 248-778-6714.
+					</td>
+				</tr>
+			</table>
 		</div>
 		<div id="menu">
 			</br><a href="contact.html">Contact</a>

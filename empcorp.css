@@ -1,9 +1,32 @@
-#scheduleinfo{
+#join{
 	position: absolute;
 	left: 0;
 	top: 15%;
 	height: 85%;
 	width: 100%;
+	text-align: center;
+	color: white;
+}
+
+#join h1{
+	font-size: 9rem;
+	position: relative;
+	top: -5rem;
+}
+
+footer{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+#join .bigbutton{
+	position: relative;
+	top: -5rem;
+}
+
+#join h2{
+	font-size: 3rem;
 }
 
 body{

@@ -23,9 +23,15 @@ iframe, #map, #bgimage{
 	background-color: white;
 }
 
+footer{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
 #bgimage{
 	z-index: 10;
-	background-image: url('Detroit-City-Skyline.jpg');
+/*	background-image: url('Detroit-City-Skyline.jpg');*/
 	background-position: center center;
 	transition: all 1000000s;
 }
@@ -43,18 +49,6 @@ iframe, #map, #bgimage{
 	opacity: 0;
 	transition: all 1s;
 	z-index: -10;
-}
-
-td{
-	padding: 10px;
-}
-
-#contactinfo table{
-	position: relative;
-	top: 10%;
-	left: 10%;
-	width: 80%;
-	right: 10%;
 }
 
 #contactmap{
@@ -89,50 +83,4 @@ td{
 	left: 0;
 	top: 0;
 	width: 33%;
-}
-
-td input{
-	height: 40px;
-}
-
-td textarea{
-	height: 80px;
-	resize: none;
-}
-
-td input, td textarea{
-	display: block;
-	width: 100%;
-	background-color: whitesmoke;
-	border: none;
-}
-
-td input[type="button"]{
-	position: relative;
-	left: 35%;
-	width: 30%;
-	background-color: #06ba8f;
-	border: none;
-	color: white;
-	border-radius: 100px;
-}
-
-h2 {
-	font-size: 50px;
-}
-
-th span {
-	position: relative;
-	top: -30px;
-	padding-bottom: 10%;
-}
-
-th {
-}
-
-#othercontact{
-	font-size: 15px;
-	position: relative;
-	width: 100%;
-	text-align: center;
 }
